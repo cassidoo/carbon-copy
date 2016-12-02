@@ -5,6 +5,8 @@ var modelId = '';
 function createNameList() {
   nameList = [$('#name0').val(), $('#name1').val()];
   console.log('Initialized name list. ' + nameList);
+  $('.name-form').hide(500);
+  $('.pic-form').show(500);
 }
 
 function addPerson() {
@@ -23,7 +25,8 @@ function addPerson() {
 }
 
 function createFam() {
-  app.models.create('fam', nameList).then(
+  var modelName = 'fam' + Math.floor((Math.random() * 10000) + 1);
+  app.models.create(modelName, nameList).then(
     trainModel,
     errorHandler
   );
@@ -41,14 +44,19 @@ function errorHandler(err) {
 }
 
 function ready(model) {
-    console.log('It worked');
-    console.log(model);
-    modelId = model.versionId;
+  $('.pic-form').hide(500);
+  $('.result-form').show(500);
+  console.log('It worked');
+  console.log(model);
+    
+  modelId = model.data.model_version.id;
 }
 
 function compareFaces() {
   var baby = $('#me').val();
-  model.predict(modelId, [baby]).then(
+  console.log('Model ID: ' + modelId);
+  console.log('Baby pic: ' + baby);
+  app.models.predict(modelId, [baby]).then(
     function(response) {
       console.log(response);
     }, errorHandler
