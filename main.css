@@ -1,0 +1,49 @@
+body {
+  background: url('white_carbon.png');
+  line-height: 1.3em;
+}
+
+.container {
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, 0);
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.title, .desc {
+  font-family: 'Bungee', cursive;
+  text-align: center;
+}
+
+.desc {
+  margin-top: -20px;
+  padding-bottom: 20px;
+}
+
+.name-form, .pic-form, .result-form {
+  text-align: center;
+}
+
+.pic-form {
+  display: none;
+}
+
+.result-form {
+  display: none;
+}
+
+button, input {
+  margin: 5px;
+  padding: 5px;
+}
+
+.button-success {
+  background: #1CB841;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}

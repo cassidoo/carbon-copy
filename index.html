@@ -2,34 +2,45 @@
 <html>
   <head>
     <title>Carbon Copy</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+    <script type="text/javascript" src="keys.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <div class="title">Carbon Copy</div>
+    <div class="container">
+    <div class="title"><h1>Carbon Copy</h1></div>
     <div class="desc">Who do you look the most like?</div>
     <div class="name-form">
       First, against whom do you want to compare yourself?
+      <br>
       <input type="text" id="name0" placeholder="Example: mom">
       <input type="text" id="name1" placeholder="Example: dad">
-      <button class="sub" onclick="createNameList()">Submit Name</button>
+      <br>
+      <button class="sub button-success pure-button" onclick="createNameList()">Submit Name</button>
     </div>
-    <div class="name-form">
+    <div class="pic-form">
       Input a photo URL for each person. You can add multiple per person for better results.
+      <br>
       <input type="text" id="name" placeholder="Example: mom">
       <input type="text" id="photo" placeholder="Example: http://i.imgur.com/jBo0eTC.jpg">
-      <button class="sub" onclick="addPerson()">Submit Name</button>
-      <button class="sub" onclick="createFam()">Done adding photos</button>
+      <br>
+      <button class="sub button-success pure-button" onclick="addPerson()">Add photo for person</button>
+      <button class="sub button-success pure-button" onclick="createFam()">Done adding photos</button>
     </div>
-    <div class="name-form">
+    <div class="result-form">
       Now, give us a photo of yourself!
+      <br>
       <input type="text" id="me" placeholder="Example: http://i.imgur.com/jBo0eTC.jpg">
-      <button class="sub" onclick="compareFaces()">Submit Name</button>
+      <br>
+      <button class="sub button-success pure-button" onclick="compareFaces()">Submit Name</button>
+    </div>
     </div>
   </body>
 </html>
